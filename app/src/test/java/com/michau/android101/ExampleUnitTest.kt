@@ -1,4 +1,4 @@
-package com.example.android_first
+package com.michau.android101
 
 import org.junit.Test
 
