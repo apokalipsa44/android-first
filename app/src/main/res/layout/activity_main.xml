@@ -7,13 +7,15 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/result-editText"
+        android:id="@+id/result_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +25,11 @@
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="32dp"
         android:minWidth="48dp"
         android:text="7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result-editText" />
+        app:layout_constraintStart_toStartOf="@+id/newNumber_textView"
+        app:layout_constraintTop_toBottomOf="@+id/newNumber_textView" />
 
     <Button
         android:id="@+id/button8"
@@ -181,31 +182,35 @@
         app:layout_constraintStart_toEndOf="@+id/button9" />
 
     <TextView
-        android:id="@+id/operator-textWiew"
+        android:id="@+id/operator_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/result-editText"
-        app:layout_constraintEnd_toStartOf="@+id/newNumber-textView"
+        app:layout_constraintBottom_toBottomOf="@+id/result_editText"
+        app:layout_constraintEnd_toStartOf="@+id/newNumber_textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/newNumber-textView" />
+        app:layout_constraintTop_toTopOf="@+id/newNumber_textView" />
 
     <EditText
-        android:id="@+id/newNumber-textView"
+        android:id="@+id/newNumber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:autoText="false"
         android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:importantForAutofill="no"
         android:inputType="numberSigned|numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/result-editText"
+        app:layout_constraintTop_toBottomOf="@id/result_editText"
         app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
