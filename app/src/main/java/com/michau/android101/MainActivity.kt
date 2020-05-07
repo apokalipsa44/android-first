@@ -6,6 +6,10 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
+const val STATE_PENDING_OPERATION = "PnedingOperation"
+const val STATE_FIRST_NUMBER = "FirstNumber"
+const val STATE_IS_FIEST_NUMBER = "false"
+
 class MainActivity : AppCompatActivity() {
     var firstNumber: Double? = null
     var secondNumber: Double = 0.0
@@ -77,5 +81,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if (firstNumber != null) {
+            outState.putDouble(STATE_FIRST_NUMBER, firstNumber!!)
+            outState.putBoolean(STATE_IS_FIEST_NUMBER, true)
+        }
+        outState.putString(STATE_PENDING_OPERATION, pendingOperation)
+    }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        firstNumber = if (savedInstanceState.getBoolean(STATE_IS_FIEST_NUMBER, false)) {
+            savedInstanceState.getDouble(STATE_FIRST_NUMBER)
+        } else {
+            null
+        }
+        pendingOperation = savedInstanceState.getString(STATE_PENDING_OPERATION)!!
+        operator_textView.text = pendingOperation
+    }
 }
