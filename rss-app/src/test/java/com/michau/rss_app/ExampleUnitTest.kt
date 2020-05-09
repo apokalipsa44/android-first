@@ -1,4 +1,4 @@
-package com.michau.rssapp
+package com.michau.rss_app
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.michau.rssapp
+package com.michau.rss_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

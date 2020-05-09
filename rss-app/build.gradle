@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.michau.rssapp"
+        applicationId "com.michau.rss_app"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
