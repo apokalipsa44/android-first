@@ -27,7 +27,7 @@ class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
 //        val playerView = YouTubePlayerView(this)
 //        playerView.layoutParams = ConstraintLayout.LayoutParams(
 //            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-//        layout.addView(playerView)
+//        layout.addView(playerView)k
     }
 
     override fun onInitializationSuccess(
