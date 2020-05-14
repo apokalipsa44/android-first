@@ -48,6 +48,8 @@ class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         Toast.makeText(this, "Youtube initialize success", Toast.LENGTH_LONG).show()
         if (!wasRestored) {             //plays from start not on resume
             youTubePlayer?.loadVideo(YT_VIDEO_ID)
+        } else {
+            youTubePlayer?.play()       //resumes clip after device was rotated
         }
     }
 
@@ -61,6 +63,47 @@ class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         } else {
             val errorMsg = "Error initializing player ($youTubeInitializationResult)"
             Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private val youtubePlayerEventListener = object : YouTubePlayer.PlaybackEventListener {
+        override fun onSeekTo(p0: Int) {
+        }
+
+        override fun onBuffering(p0: Boolean) {
+        }
+
+        override fun onPlaying() {
+            Toast.makeText(this@YoutubeActivity, "playing now", Toast.LENGTH_SHORT)
+        }
+
+        override fun onStopped() {
+            Toast.makeText(this@YoutubeActivity, "paused now", Toast.LENGTH_SHORT)
+        }
+
+        override fun onPaused() {
+        }
+    }
+
+    private val playerStateChangeListener = object : YouTubePlayer.PlayerStateChangeListener {
+        override fun onAdStarted() {
+            Toast.makeText(this@YoutubeActivity, "hate commercials", Toast.LENGTH_SHORT)
+        }
+
+        override fun onLoading() {
+        }
+
+        override fun onVideoStarted() {
+        }
+
+        override fun onLoaded(p0: String?) {
+        }
+
+        override fun onVideoEnded() {
+            Toast.makeText(this@YoutubeActivity, "you made it", Toast.LENGTH_SHORT)
+        }
+
+        override fun onError(p0: YouTubePlayer.ErrorReason?) {
         }
     }
 }
