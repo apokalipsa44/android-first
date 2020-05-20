@@ -1,7 +1,4 @@
 rootProject.name='android101'
-include ':app'
-rootProject.name='android-first'
-include ':myapplication'
 include ':rss-app'
 include ':yt-app'
 include ':flicker'

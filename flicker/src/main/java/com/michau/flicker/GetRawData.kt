@@ -28,7 +28,7 @@ class GetRawData : AsyncTask<String, Void, String>() {
 
         try {
             downloadStatus = DownloadStatus.OK
-            return URL(params[0]).readText()
+            return URL(params[0]).path
         } catch (e: Exception) {
             val errorMsg = when (e) {
                 is MalformedURLException -> {
@@ -53,3 +53,8 @@ class GetRawData : AsyncTask<String, Void, String>() {
         }
     }
 }
+
+//private fun URL.readText(): String {
+//    return ""
+//
+//}
