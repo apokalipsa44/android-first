@@ -2,6 +2,9 @@ package com.michau.vievpager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -10,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var imagesList=listOf(
+        var imagesList = listOf(
             R.drawable.alk1,
             R.drawable.alk2,
             R.drawable.alk3,
@@ -21,8 +24,25 @@ class MainActivity : AppCompatActivity() {
             R.drawable.alk8
         )
 
-        val adapter=ViewPagerAdapter(imagesList)
-        viewPager.adapter=adapter
+        val adapter = ViewPagerAdapter(imagesList)
+        viewPager.adapter = adapter
 
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = "Tab ${position + 1}"
+        }.attach()
+
+        tabLayout.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                Toast.makeText(this@MainActivity, "tab ${tab?.text} reselected", Toast.LENGTH_SHORT ).show()
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                Toast.makeText(this@MainActivity, "tab ${tab?.text} unselected", Toast.LENGTH_SHORT ).show()
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                Toast.makeText(this@MainActivity, "tab ${tab?.text} selected", Toast.LENGTH_SHORT ).show()
+            }
+        })
     }
 }
