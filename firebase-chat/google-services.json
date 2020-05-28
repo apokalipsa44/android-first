@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "325178968953",
+    "firebase_url": "https://fire-chat1211.firebaseio.com",
+    "project_id": "fire-chat1211",
+    "storage_bucket": "fire-chat1211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325178968953:android:62ef649b2e974c7b223da8",
+        "android_client_info": {
+          "package_name": "com.michau.firebase_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325178968953-iq908pa5iiqp4thv8hiiv02ltvqr9mf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXpvfPpfhxzWFRxgogwrAM89PcgtPHHsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325178968953-iq908pa5iiqp4thv8hiiv02ltvqr9mf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
